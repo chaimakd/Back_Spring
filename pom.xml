@@ -89,17 +89,8 @@
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>3.1.0</version>
 			</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.0.0-M5</version>
-					<configuration>
-						<includes>
-							<include>**/*StockServiceImplTest.java</include>
-						</includes>
-					</configuration>
-				</plugin>
-			</plugins>
+
+		</plugins>
 	</build>
 
 </project>
