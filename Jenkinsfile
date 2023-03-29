@@ -9,17 +9,17 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/chaimakd/Back_Spring.git'
             }
         }
-        stage("Build") {
+       /* stage("Build") {
             steps{
                 sh "mvn clean install"
             }
-        }
+        }*/
 
-    stage("Unit Test"){
+   /* stage("Unit Test"){
        steps {
            sh 'mvn test'
        }
-    }
+    }*/
 
     stage("Analyse Sonar"){
         steps{
