@@ -16,9 +16,6 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
-		<sonar.host.url>http://172.20.10.2:9000</sonar.host.url>
-		<sonar.login>admin</sonar.login>
-		<sonar.password>kodkod</sonar.password>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -85,6 +82,11 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>3.1.0</version>
+			</plugin>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.9.1.2184</version>
 			</plugin>
 		</plugins>
 	</build>

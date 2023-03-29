@@ -9,24 +9,25 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/chaimakd/Back_Spring.git'
             }
         }
-       /* stage("Build") {
+        stage("Build") {
             steps{
                 sh "mvn clean install"
             }
-        }*/
+        }
 
    /* stage("Unit Test"){
        steps {
            sh 'mvn test'
        }
     }*/
-
-    stage("Analyse Sonar"){
+    stage("Sonar"){
         steps{
-            withSonarQubeEnv('sonar-server') {
-             sh'mvn clean package sonar:sonar'
-            }
-
+         script{
+           def scannerHome = tool 'SonarQube Scanner'
+           withSonarQubeEnv('sonar-server') {
+              sh "${scannerHome}/bin/sonar-scanner"
+             }
+           }
         }
     }
 }
