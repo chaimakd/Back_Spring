@@ -26,7 +26,7 @@ public class StockServiceImplTest {
 		assertNotNull(savedStock.getLibelleStock());
 		stockService.deleteStock(savedStock.getIdStock());
 
-		
+
 	} 
 	
 	@Test
