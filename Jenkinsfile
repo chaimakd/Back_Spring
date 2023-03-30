@@ -33,6 +33,7 @@ pipeline {
         }
  stage('Nexus deploy'){
    steps{
+    script{
      nexusArtifactUploader artifacts:
 	 [
 	  [
@@ -46,8 +47,9 @@ pipeline {
 	nexusUrl: 'localhost:8081',
 	nexusVersion: 'nexus3',
 	protocol: 'http',
-	repository: 'nuget.org-proxy',
+	repository: 'TpAchatSpring',
 	version: '1.0'
+	}
   }
  }
   }
