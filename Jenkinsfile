@@ -21,10 +21,10 @@ pipeline {
            sh 'mvn test'
        }
     }*/
-    stage("SonarQube Test code"){
+    stage("SonarQube Test"){
      agent any
         steps{
-           withSonarQubeEnv(credentialsId: 'jenkins-api') {
+           withSonarQubeEnv('sonar-server') {
               sh 'mvn clean package sonar:sonar'
              }
            }
