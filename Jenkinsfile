@@ -31,5 +31,24 @@ pipeline {
              }
            }
         }
-     }
-   }
+ stage('Nexus deploy'){
+   steps{
+     nexusArtifactUploader artifacts:
+	 [
+	  [
+	    artifactId: 'tpAchatProject',
+		classifier: '', file: 'target/Achat.jar',
+		type: 'jar'
+		]
+	],
+	credentialsId: 'nexus-auth',
+	groupId: 'com.esprit.examen',
+	nexusUrl: 'localhost:8081',
+	nexusVersion: 'nexus3',
+	protocol: 'http',
+	repository: 'nuget.org-proxy',
+	version: '1.0'
+  }
+ }
+  }
+}
