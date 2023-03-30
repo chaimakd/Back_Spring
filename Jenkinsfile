@@ -11,25 +11,23 @@ pipeline {
         }
         stage("Build") {
             steps{
-                sh "mvn clean install"
+                sh "mvn clean install -DskipTests"
             }
         }
 
    /* stage("Unit Test"){
+
        steps {
            sh 'mvn test'
        }
     }*/
-    stage("Sonar"){
+    stage("SonarQube Test code"){
+     agent any
         steps{
-         script{
-           def scannerHome = tool 'SonarQube Server'
-           withSonarQubeEnv('sonar-server') {
-              sh "${scannerHome}/bin/sonar-scanner"
+           withSonarQubeEnv(credentialsId: 'jenkins-api') {
+              sh 'mvn clean package sonar:sonar'
              }
            }
         }
-    }
-}
-
-}
+     }
+   }
