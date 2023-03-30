@@ -44,5 +44,7 @@ public class Facture implements Serializable {
     @JsonIgnore
     private Set<Reglement> reglements;
 
-	
+
+    public Facture(long l, String description, Date date, float v, boolean b, Object o, Object o1) {
+    }
 }
