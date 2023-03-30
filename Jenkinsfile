@@ -15,12 +15,14 @@ pipeline {
             }
         }
 
-   /* stage("Unit Test"){
-
-       steps {
-           sh 'mvn test'
-       }
-    }*/
+   stage('Test Unitaire') {
+     when {
+       changeset "src/**"
+     }
+     steps {
+       sh './gradlew test'
+     }
+   }
     stage("SonarQube Test"){
      agent any
         steps{
