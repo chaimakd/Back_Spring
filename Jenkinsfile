@@ -14,11 +14,7 @@ pipeline {
                 sh "mvn clean install -DskipTests"
             }
         }
-
    stage('Test Unitaire') {
-     when {
-       changeset "src/**"
-     }
      steps {
        sh './gradlew test'
      }
