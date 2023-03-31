@@ -20,7 +20,7 @@ pipeline {
        changeset "src/**"
      }
      steps {
-       sh './gradlew test' //test
+       sh 'mvn test'
      }
    }
     stage("SonarQube Test"){
