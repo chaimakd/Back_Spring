@@ -47,7 +47,7 @@ pipeline {
 	nexusUrl: 'localhost:8081',
 	nexusVersion: 'nexus3',
 	protocol: 'http',
-	repository: 'TpAchatSpring',
+	repository: 'TpAchatSpring2',
 	version: '1.0'
 	}
   }
