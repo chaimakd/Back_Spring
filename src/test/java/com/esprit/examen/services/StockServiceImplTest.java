@@ -23,7 +23,7 @@ public class StockServiceImplTest {
 		Stock s = new Stock("stock test",10,100);
 		Stock savedStock= stockService.addStock(s);
 		
-	//	assertEquals(expected+1, stockService.retrieveAllStocks().size());
+	    //assertEquals(expected+1, stockService.retrieveAllStocks().size());
 		assertNotNull(savedStock.getLibelleStock());
 		stockService.deleteStock(savedStock.getIdStock());
 		
